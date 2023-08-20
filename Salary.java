@@ -11,5 +11,6 @@ public class Salary {
         System.out.println("Su salario es: $"+salBruto);
         System.out.println("la retencion de fuente sera de: $"+(int)reten);
         System.out.println("por lo que su salario neto sera de: $"+salNeto);
+        input.close()
     }
 }
