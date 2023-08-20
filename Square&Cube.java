@@ -10,6 +10,6 @@ public class sqCb {
         cb=Math.pow(number, cube);
         System.out.println("El cuadrado de "+(int) number+" es: "+(int) sq);
         System.out.println("El cubo de "+(int) number+" es: "+(int) cb);
-
+        input.close();
     }
 }
