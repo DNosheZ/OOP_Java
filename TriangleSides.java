@@ -7,10 +7,9 @@ public class App {
         double ladoB = input.nextDouble();
         double ladoC = input.nextDouble();
         Perimetro perim = new Perimetro(ladoA, ladoB, ladoC);
-        Semiperimetro semiPerim = new Semiperimetro(perim.per());
-        Area area = new Area(ladoA, ladoB, ladoC, semiPerim.SemiPer());
+        Area area = new Area(ladoA, ladoB, ladoC, perim.per()/2);
         System.out.println("El perimetro del triangulo es: "+perim.per());
-        System.out.println("El semiperimetro del triangulo es: "+semiPerim.SemiPer());
+        System.out.println("El semiperimetro del triangulo es: "+perim.per()/2);
         System.out.println("El area del triangulo es: "+area.Ar());
         input.close();
     }
