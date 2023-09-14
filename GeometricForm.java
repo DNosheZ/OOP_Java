@@ -420,7 +420,7 @@ public class GeometricForm extends javax.swing.JFrame {
 
     private void bttnCircleCalcActionPerformed(java.awt.event.ActionEvent evt) {                                               
         double ratio = Double.parseDouble(txtRatio.getText());
-        Circulo figura1 = new Circulo(ratio);
+        CirculoF figura1 = new CirculoF(ratio);
         txtAreaCirc.setText(String.valueOf(figura1.calcularArea()));
         txtPerimeterCirc.setText(String.valueOf(figura1.calcularPerimetro()));
     }                                              
@@ -444,7 +444,7 @@ public class GeometricForm extends javax.swing.JFrame {
     private void bttnRectangleCalcActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         double baseRect = Double.parseDouble(txtBase.getText());
         double HighnessRect = Double.parseDouble(txtHighness.getText());
-        Rectangulo figura2 = new Rectangulo(baseRect, HighnessRect);
+        RectanguloF figura2 = new RectanguloF(baseRect, HighnessRect);
         txtAreaRect.setText(String.valueOf(figura2.calcularArea()));
         txtPerimeterRect.setText(String.valueOf(figura2.calcularPerimetro()));
     }                                                 
@@ -458,7 +458,7 @@ public class GeometricForm extends javax.swing.JFrame {
 
     private void bttnSqCalcActionPerformed(java.awt.event.ActionEvent evt) {                                           
         double Sqside=Double.parseDouble(txtLengtSq.getText());
-        Cuadrado figura3=new Cuadrado(Sqside);
+        CuadradoF figura3=new CuadradoF(Sqside);
         txtAreaSq.setText(String.valueOf(figura3.calcularArea()));
         txtSqPerim.setText(String.valueOf(figura3.calcularPerimetro()));
         
@@ -477,7 +477,7 @@ public class GeometricForm extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         double TrBase=Double.parseDouble(txtTrBase.getText()); 
         double TrHighness=Double.parseDouble(txtTrHighness.getText());
-        Triangulo figure4=new Triangulo (TrBase,TrHighness);
+        TrianguloF figure4=new TrianguloF (TrBase,TrHighness);
         txtTrArea.setText(String.valueOf(figure4.calcularArea()));
         txtTrPerimeter.setText(String.valueOf(figure4.calcularPerímetro()));
         txtHipo.setText(String.valueOf(figure4.calcularHipotenusa()));
