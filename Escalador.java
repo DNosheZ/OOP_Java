@@ -30,7 +30,7 @@ public class Escalador extends Ciclista {
     * Método que devuelve la aceleración promedio de un escalador
     * @return La aceleración promedio de un escalador
     */
-    protected double getAceleraciónPromedio() {
+    protected double getAceleracionPromedio() {
         return aceleracionPromedio;
     }
     /**
@@ -38,7 +38,7 @@ public class Escalador extends Ciclista {
     * @param Parametro que especifica la aceleración promedio de un 
     * escalador
     */
-    protected void setAceleraciónPromedio(double aceleracionPromedio) {
+    protected void setAceleracionPromedio(double aceleracionPromedio) {
         this.aceleracionPromedio = aceleracionPromedio;
     }
     protected double getGradoRampa() {
