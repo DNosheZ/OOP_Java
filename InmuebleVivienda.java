@@ -13,7 +13,7 @@ package com.mycompany.agenciainmueble;
 * destinada para la vivienda localizada en el sector urbano.
 * @version 1.2/2020
 */
-public class CasaUrbana extends Casa {
+public class InmuebleVivienda extends Inmueble {
     /**
     * Constructor de la clase CasaUrbana
     * @param identificadorInmobiliario Parámetro que define el 
