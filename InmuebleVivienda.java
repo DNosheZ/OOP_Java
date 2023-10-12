@@ -25,13 +25,13 @@ public class InmuebleVivienda extends Inmueble {
     * Constructor de la clase InmuebleVivienda
     * @param identificadorInmobiliario Parámetro que define el
     * identificador inmobiliario de un inmueble para la vivienda
-    * @param área Parámetro que define el área de un inmueble para la
+    * @param area Parámetro que define el área de un inmueble para la
     * vivienda
-    * @param dirección Parámetro que define la dirección donde se
+    * @param direccion Parámetro que define la dirección donde se
     * encuentra localizado un inmueble para la vivienda
-    * @param númeroHabitaciones Parámetro que define el número de
+    * @param numeroHabitaciones Parámetro que define el número de
     * habitaciones que tiene un inmueble para la vivienda
-    * @param númeroBaños Parámetro que define el número de baños
+    * @param numeroBaños Parámetro que define el número de baños
     * que tiene un inmueble para la vivienda
     */
     public InmuebleVivienda(int identificadorInmobiliario, int area, String direccion, int numeroHabitaciones, int numeroBaños) {
