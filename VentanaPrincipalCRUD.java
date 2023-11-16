@@ -13,12 +13,12 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.lang.NumberFormatException;
 
-public class VentanaPrincipal extends javax.swing.JFrame {
+public class VentanaPrincipalCRUD extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaPrincipal
      */
-    public VentanaPrincipal() {
+    public VentanaPrincipalCRUD() {
         initComponents();
     }
 
@@ -217,7 +217,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 number = Long.parseLong(lineSplit[1]);
  
                 // if condition to find existence of record.
-                if (name==newName|| number == newNumber) {
+                if (name.equals(newName)|| number == newNumber) {
                     found = true;
                     break;
                 }
@@ -250,7 +250,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 raf.close();
  
                 // Print the message
-                txtAdvice.setText(" Input name "+newName+" does not exists. ");
+                txtAdvice.setText(" El registro de  "+newName+" no existe. ");
             }
         }
  
@@ -311,7 +311,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 number = Long.parseLong(lineSplit[1]);
  
                 // if condition to find existence of record.
-                if (name==newName || number == newNumber) {
+                if (name.equals(newName) || number == newNumber) {
                     found = true;
                     break;
                 }
@@ -322,7 +322,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
  
                 // Creating a temporary file
                 // with file pointer as tmpFile.
-                File tmpFile = new File("temp.txt");
+                File tmpFile = new File("C:\\Users\\Usuario\\Documents\\Codes\\java\\CRUD\\temp.txt");
  
                 // Opening this temporary file
                 // in ReadWrite Mode
@@ -342,7 +342,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
  
                     // Check if the fetched contact
                     // is the one to be updated
-                    if (name.equals(inputName)) {
+                    if (name.equals(newName)) {
  
                         // Update the number of this contact
                         nameNumberString = name + "!"  + String.valueOf(newNumber);
@@ -367,8 +367,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
  
                 // Copy the contents from
                 // the temporary file to original file.
-                while (tmpraf.getFilePointer()
-                       < tmpraf.length()) {
+                while (tmpraf.getFilePointer()< tmpraf.length()) {
                     raf.writeBytes(tmpraf.readLine());
                     raf.writeBytes(System.lineSeparator());
                 }
@@ -395,7 +394,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 raf.close();
  
                 // Print the message
-                System.out.println(" Input name "+newName+ " does not exists. ");
+                txtAdvice.setText(" El registro de  "+newName+" no existe. ");
             }
         }
  
@@ -520,7 +519,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 number = Long.parseLong(lineSplit[1]);
  
                 // if condition to find existence of record.
-                if (name == newName) {
+                if (name.equals(newName)== true) {
                     found = true;
                     break;
                 }
@@ -531,7 +530,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
  
                 // Creating a temporary file
                 // with file pointer as tmpFile.
-                File tmpFile = new File("temp.txt");
+                File tmpFile = new File("C:\\Users\\Usuario\\Documents\\Codes\\java\\CRUD\\temp.txt");
  
                 // Opening this temporary file
                 // in ReadWrite Mode
@@ -551,7 +550,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
  
                     // Check if the fetched contact
                     // is the one to be deleted
-                    if (name.equals(inputName)) {
+                    if (name.equals(newName)==true) {
  
                         // Skip inserting this contact
                         // into the temporary file
@@ -577,8 +576,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
  
                 // Copy the contents from
                 // the temporary file to original file.
-                while (tmpraf.getFilePointer()
-                       < tmpraf.length()) {
+                while (tmpraf.getFilePointer()< tmpraf.length()) {
                     raf.writeBytes(tmpraf.readLine());
                     raf.writeBytes(System.lineSeparator());
                 }
@@ -605,7 +603,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 raf.close();
  
                 // Print the message
-                System.out.println(" Input name "+txtName.getText()+" does not exists. ");
+                txtAdvice.setText(" El registro de  "+newName+" no existe. ");
             }
         }
  
@@ -632,20 +630,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipalCRUD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipalCRUD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipalCRUD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipalCRUD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal().setVisible(true);
+                new VentanaPrincipalCRUD().setVisible(true);
             }
         });
     }
