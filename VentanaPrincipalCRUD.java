@@ -127,18 +127,19 @@ public class VentanaPrincipalCRUD extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(146, 146, 146)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAdvice, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
-                                .addGap(37, 37, 37)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtId)
-                                    .addComponent(txtName))))))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtId)
+                            .addComponent(txtName))))
                 .addGap(7, 7, 7)
                 .addComponent(EraseBttn)
                 .addGap(39, 39, 39))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(txtAdvice, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -420,6 +421,7 @@ public class VentanaPrincipalCRUD extends javax.swing.JFrame {
  
             String nameNumberString;
             String name;
+            String newName = String.valueOf(txtName.getText());
             long number;
             int index;
  
@@ -444,7 +446,7 @@ public class VentanaPrincipalCRUD extends javax.swing.JFrame {
  
                 // reading line from the file.
                 nameNumberString = raf.readLine();
- 
+  
                 // splitting the string to get name and
                 // number
                 String[] lineSplit = nameNumberString.split("!");
@@ -452,9 +454,11 @@ public class VentanaPrincipalCRUD extends javax.swing.JFrame {
                 // separating name and number.
                 name = lineSplit[0];
                 number = Long.parseLong(lineSplit[1]);
+                if (name.equals(newName)){
+                    txtAdvice.setText("Nombre y ID del amigo: " + name + " |"+ number);
+                }
  
-                // Print the contact data
-                txtAdvice.setText("Nombre del amigo: " + name + "\n" + "Numero de Id: " + number + "\n");
+                
             }
         }
         catch (IOException ioe)
